@@ -1,3 +1,6 @@
+const titleInputEl = document.getElementById("title-input-field");
+const noteTextInputEl = document.getElementById("textArea-input-field");
+
 let allMyNotes = [];
 let selectedNote = false;
 let selectedID = "";
@@ -15,21 +18,20 @@ function create_new_note(inputTitle, inputNote) {
   saveToLocalStorage();
   removeElementsByClass();
   loadDataFromAPI();
-  // create_note_UI(inputTitle, inputNote, timeStamp, idCreated);
 }
 
 function save_note() {
-  if (
-    document.getElementById("title-input-field").value != "" &&
-    document.getElementById("textArea-input-field").value != ""
-  ) {
+  if (titleInputEl.value != "" && noteTextInputEl.value != "") {
+    console.log(`not empty`);
     if (selectedNote === false) {
+      console.log(`create new note function wird gestartet`);
       create_new_note(
         document.getElementById("title-input-field").value,
         document.getElementById("textArea-input-field").value
       );
       return;
     } else {
+      console.log("keine neue Notiz wird erstellt");
       serachForNote();
       selectedNote = false;
       removeElementsByClass();
@@ -37,6 +39,7 @@ function save_note() {
       return;
     }
   } else {
+    console.log(`ich bin beim alert block angekommen`);
     alert(`input is missing`);
 
     return;

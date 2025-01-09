@@ -8,11 +8,9 @@ function loadDataFromAPI() {
   if (rawData) {
     const data = JSON.parse(rawData);
     allMyNotes = data.sort((a, b) => b.timestamp - a.timestamp);
-    console.log(allMyNotes);
     for (let i = 0; i < allMyNotes.length; i++) {
       let date = new Date(allMyNotes[i].timestamp);
       let formattedDate = date.toLocaleString("de-DE");
-      console.log(date);
       create_note_UI(
         allMyNotes[i].title,
         allMyNotes[i].note_message,
