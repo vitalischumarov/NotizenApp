@@ -10,7 +10,7 @@
 :root {
   --primary-color: rgb(72 94 76);
   --white: #ffffff;
-  --primary-color-hover: rgb(142 165 148);
+  --primary-color-hover: rgb(130, 185, 145);
 }
 
 .main-container {
@@ -31,6 +31,12 @@
 .single-note:hover {
   cursor: pointer;
   background-color: var(--primary-color-hover);
+}
+
+.selectedNote {
+  background-color: var(
+    --primary-color-hover
+  ); /* Farbe für das ausgewählte div */
 }
 
 #new-note-button {

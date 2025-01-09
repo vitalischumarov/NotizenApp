@@ -4,6 +4,7 @@ const noteTextInputEl = document.getElementById("textArea-input-field");
 let allMyNotes = [];
 let selectedNote = false;
 let selectedID = "";
+let noteElement = null;
 
 function create_new_note(inputTitle, inputNote) {
   const idCreated = Math.random();
@@ -110,6 +111,10 @@ function create_note_UI(title_message, note_message, timestamp_message, id) {
 }
 
 function selectNote(noteID) {
+  removeElementsByClass();
+  loadDataFromAPI();
+  noteElement = document.getElementById(noteID);
+  noteElement.classList.add("selectedNote");
   let previousTitle = document.querySelector(
     `[data-title-id="${noteID}"]`
   ).innerHTML;
