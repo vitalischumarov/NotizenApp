@@ -3,11 +3,14 @@
   padding: 0;
   box-sizing: border-box;
   font-family: sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 :root {
-  --primary-color: rgb(248 104 234);
+  --primary-color: rgb(72 94 76);
   --white: #ffffff;
+  --primary-color-hover: rgb(142 165 148);
 }
 
 .main-container {
@@ -27,7 +30,7 @@
 
 .single-note:hover {
   cursor: pointer;
-  background-color: lightgray;
+  background-color: var(--primary-color-hover);
 }
 
 #new-note-button {
@@ -45,9 +48,9 @@
 }
 
 .button:hover {
-  background-color: rgb(253 137 241);
+  background-color: var(--primary-color-hover);
   svg {
-    background-color: rgb(253 137 241);
+    background-color: var(--primary-color-hover);
   }
 }
 
@@ -120,7 +123,7 @@ svg {
 }
 
 .single-note {
-  border: solid 1px gray;
+  border: solid 1px var(--primary-color);
   border-radius: 5px;
   margin-top: 1.5rem;
   height: 130px;
