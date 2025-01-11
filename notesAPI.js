@@ -11,7 +11,7 @@ function loadDataFromAPI() {
     for (let i = 0; i < allMyNotes.length; i++) {
       let date = new Date(allMyNotes[i].timestamp);
       let formattedDate = date.toLocaleString("de-DE");
-      create_note_UI(
+      createNoteUI(
         allMyNotes[i].title,
         allMyNotes[i].note_message,
         formattedDate,

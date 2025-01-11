@@ -6,7 +6,7 @@ let selectedNote = false;
 let selectedID = "";
 let noteElement = null;
 
-function create_new_note(inputTitle, inputNote) {
+function createNewNote(inputTitle, inputNote) {
   const idCreated = Math.random();
   const timeStamp = Date.now();
   const note = {
@@ -21,33 +21,28 @@ function create_new_note(inputTitle, inputNote) {
   loadDataFromAPI();
 }
 
-function save_note() {
-  if (titleInputEl.value != "" && noteTextInputEl.value != "") {
-    console.log(`not empty`);
-    if (selectedNote === false) {
-      console.log(`create new note function wird gestartet`);
-      create_new_note(
-        document.getElementById("title-input-field").value,
-        document.getElementById("textArea-input-field").value
-      );
-      return;
-    } else {
-      console.log("keine neue Notiz wird erstellt");
-      serachForNote();
-      selectedNote = false;
-      removeElementsByClass();
-      loadDataFromAPI();
-      return;
-    }
-  } else {
-    console.log(`ich bin beim alert block angekommen`);
-    alert(`input is missing`);
+function saveNote() {
+  if (titleInputEl.value === "" || noteTextInputEl.value === "") {
+    alert("empty");
+    return;
+  }
 
+  if (!selectedNote) {
+    console.log(`create new note function wird gestartet`);
+    createNewNote(
+      document.getElementById("title-input-field").value,
+      document.getElementById("textArea-input-field").value
+    );
+  } else {
+    serachForNote();
+    selectedNote = false;
+    removeElementsByClass();
+    loadDataFromAPI();
     return;
   }
 }
 
-function delete_note() {
+function deleteNote() {
   if (selectedNote == true) {
     let index = allMyNotes.findIndex((el) => {
       return el.id == selectedID;
@@ -68,7 +63,7 @@ function removeElementsByClass() {
   }
 }
 
-function create_note_UI(title_message, note_message, timestamp_message, id) {
+function createNoteUI(title_message, note_message, timestamp_message, id) {
   const single_note = document.createElement("div");
   single_note.classList.add("single-note");
   single_note.setAttribute("id", id);
