@@ -1,7 +1,4 @@
-window.addEventListener("load", (event) => {
-  removeElementsByClass();
-  loadDataFromAPI();
-});
+loadDataFromAPI();
 
 function loadDataFromAPI() {
   const rawData = localStorage.getItem("allNotesData");

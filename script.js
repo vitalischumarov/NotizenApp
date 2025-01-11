@@ -43,7 +43,7 @@ function saveNote() {
 }
 
 function deleteNote() {
-  if (selectedNote == true) {
+  if (selectedNote) {
     let index = allMyNotes.findIndex((el) => {
       return el.id == selectedID;
     });
@@ -52,7 +52,6 @@ function deleteNote() {
     removeElementsByClass();
     loadDataFromAPI();
   } else {
-    console.log(`nothing was deleted`);
   }
 }
 
