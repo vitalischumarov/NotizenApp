@@ -105,8 +105,7 @@ function createNoteUI(title_message, note_message, timestamp_message, id) {
 }
 
 function selectNote(noteID) {
-  removeElementsByClass();
-  loadDataFromAPI();
+  removeClassFromSelectedNote(noteID);
   noteElement = document.getElementById(noteID);
   noteElement.classList.add("selectedNote");
   let previousTitle = document.querySelector(
@@ -137,4 +136,11 @@ function clearInputFields() {
   document.getElementById("title-input-field").value = "";
   document.getElementById("textArea-input-field").value = "";
   selectedNote = false;
+}
+
+function removeClassFromSelectedNote(selectedID) {
+  let selectedElements = document.querySelectorAll(".single-note");
+  selectedElements.forEach((element) => {
+    element.classList.remove("selectedNote");
+  });
 }
