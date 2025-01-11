@@ -101,7 +101,7 @@
 }
 
 .new-note-text::placeholder {
-  position: absolute;
+  /* position: absolute; */
   top: 0;
   font-size: 1.3rem;
   text-align: start;
