@@ -31,7 +31,7 @@ function saveNote() {
     console.log(`create new note function wird gestartet`);
     createNewNote(
       document.getElementById("title-input-field").value,
-      document.getElementById("textArea-input-field").value
+      document.getElementById("textArea-input-field").value,
     );
   } else {
     serachForNote();
@@ -109,10 +109,10 @@ function selectNote(noteID) {
   noteElement = document.getElementById(noteID);
   noteElement.classList.add("selectedNote");
   let previousTitle = document.querySelector(
-    `[data-title-id="${noteID}"]`
+    `[data-title-id="${noteID}"]`,
   ).innerHTML;
   let previousText = document.querySelector(
-    `[data-text-id="${noteID}"]`
+    `[data-text-id="${noteID}"]`,
   ).innerHTML;
   document.getElementById("title-input-field").value = previousTitle;
   document.getElementById("textArea-input-field").value = previousText;
@@ -126,7 +126,7 @@ function serachForNote() {
   });
   allMyNotes[index].title = document.getElementById("title-input-field").value;
   allMyNotes[index].note_message = document.getElementById(
-    "textArea-input-field"
+    "textArea-input-field",
   ).value;
   allMyNotes[index].timestamp = Date.now();
   saveToLocalStorage();

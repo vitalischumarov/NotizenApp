@@ -136,7 +136,6 @@ svg {
   border-radius: 5px;
   margin-top: 1.5rem;
   height: 130px;
-  /* width: 270px; */
 }
 
 .title {
@@ -166,4 +165,35 @@ svg {
 
 .time {
   font-size: 0.7rem;
+}
+
+@media only screen and (max-width: 800px) {
+  .time-stamp,
+  .text {
+    display: none;
+  }
+
+  #create-note-text {
+    display: none;
+  }
+
+  .new-title-text {
+    font-size: 1rem;
+  }
+
+  .new-note-text {
+    font-size: 0.7rem;
+  }
+
+  .new-title-text::placeholder {
+    font-size: 1rem;
+  }
+
+  .new-note-text::placeholder {
+    font-size: 0.7rem;
+  }
+
+  .single-note {
+    height: 70px;
+  }
 }
